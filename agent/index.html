@@ -1,1 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Saku Agent: how Saku browses the web for its users</title>
+  <meta name="description" content="Saku is an AI assistant that browses websites on behalf of its users. This page explains what the Saku agent is, what it does in the browser, how to identify it, and how to contact us.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFFEFB">
+  <link rel="canonical" href="https://saku.team/agent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+  <style>
+    :root {
+      --navy: #1b2160;
+      --ink: #14172e;
+      --yellow: #f7c948;
+      --paper: #fffefb;
+      --card: #f6f4ee;
+      --muted: #565b78;
+      --line: #e3e0d6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Hanken Grotesk", Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--navy); text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; border-radius: 4px; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+    header.site { border-bottom: 1px solid var(--line); }
+    header.site .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+    .brand { font-family: "Bricolage Grotesque", Arial, sans-serif; font-weight: 700; font-size: 26px; color: var(--navy); text-decoration: none; }
+    header.site nav a { font-size: 16px; font-weight: 600; text-decoration: none; margin-left: 20px; }
+    header.site nav a:hover { text-decoration: underline; }
+    .hero { padding: 64px 0 40px; }
+    .eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); background: var(--yellow); padding: 6px 14px; border-radius: 999px; margin: 0 0 20px; }
+    h1 { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: clamp(36px, 6vw, 56px); line-height: 1.08; color: var(--navy); margin: 0 0 20px; }
+    h2 { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 30px; line-height: 1.15; color: var(--navy); margin: 0 0 14px; }
+    .lede { font-size: 21px; color: var(--ink); max-width: 720px; margin: 0; }
+    section.block { padding: 36px 0; border-top: 1px solid var(--line); }
+    p { margin: 0 0 14px; }
+    ul.plain { margin: 0; padding-left: 22px; }
+    ul.plain li { margin-bottom: 10px; }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 18px; }
+    .card { background: var(--card); border-radius: 20px; padding: 24px 26px; }
+    .card h3 { font-family: "Bricolage Grotesque", Arial, sans-serif; font-size: 22px; margin: 0 0 8px; color: var(--navy); }
+    .card p { margin: 0; font-size: 17px; }
+    .callout { background: var(--navy); color: var(--paper); border-radius: 20px; padding: 24px 28px; margin-top: 18px; }
+    .callout strong { color: var(--yellow); }
+    table.id { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 17px; }
+    table.id th, table.id td { text-align: left; vertical-align: top; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+    table.id th { width: 200px; font-weight: 700; color: var(--navy); background: var(--card); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 15px; background: var(--card); padding: 2px 7px; border-radius: 6px; overflow-wrap: anywhere; }
+    .contact { background: var(--yellow); border-radius: 24px; padding: 32px 34px; }
+    .contact h2 { margin-top: 0; }
+    .contact a { font-weight: 700; font-size: 22px; }
+    footer.site { border-top: 1px solid var(--line); margin-top: 44px; padding: 28px 0 48px; color: var(--muted); font-size: 15px; }
+    footer.site a { color: var(--muted); }
+    .updated { color: var(--muted); font-size: 15px; margin-top: 18px; }
+    @media (max-width: 680px) {
+      body { font-size: 17px; }
+      .cards { grid-template-columns: 1fr; }
+      table.id th, table.id td { display: block; width: 100%; }
+      table.id th { border-bottom: 0; padding-bottom: 4px; }
+      header.site nav a { margin-left: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="https://saku.team/">Saku</a>
+      <nav aria-label="Page sections">
+        <a href="#identify">Identify the agent</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="main" class="wrap">
+    <section class="hero" id="top">
+      <p class="eyebrow">Saku Agent</p>
+      <h1>How Saku browses the web for its users</h1>
+      <p class="lede">Saku is an AI assistant. When a person asks it to get something done online, it opens websites the way that person would, and does the task for them. This page explains what that traffic is, what it does on your site, and how to reach us.</p>
+    </section>
+
+    <section class="block" id="what">
+      <h2>What Saku is</h2>
+      <p>Saku is an AI agent app, built for India, that works as one assistant for personal life and for work. People ask it to handle errands such as comparing products, shortlisting hotels and flats, and checking a business dashboard, through the Saku app and, soon, messaging channels.</p>
+      <p>Saku is a <strong>user-directed agent</strong>. Every browsing session starts because a specific person asked Saku to do a specific task. Saku does not browse on its own schedule, and it is not a search engine or a web crawler.</p>
+    </section>
+
+    <section class="block" id="actions">
+      <h2>What the agent does in the browser</h2>
+      <p>Saku uses a real browser to carry out the task the user requested. Typical actions are:</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Search and compare</h3>
+          <p>Searches shopping, travel and property sites, opens a limited number of result pages, and compares prices, ratings and options for the user.</p>
+        </div>
+        <div class="card">
+          <h3>Read and summarise</h3>
+          <p>Reads pages the user asked about, such as product listings, reviews and quotes from suppliers, and reports back what it found.</p>
+        </div>
+        <div class="card">
+          <h3>Fill in forms</h3>
+          <p>Completes forms such as enquiries and booking requests, using only the details the user gave it for that task.</p>
+        </div>
+        <div class="card">
+          <h3>Use the user's own accounts</h3>
+          <p>Where a user chooses to share their own sign-in, Saku logs in as that user to fetch information such as a weekly sales report from their own dashboard.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p style="margin:0"><strong>Saku stops before payment.</strong> It can prepare a cart, but the user completes payment themselves in their own payment app. Consequential actions are confirmed with the user first.</p>
+      </div>
+    </section>
+
+    <section class="block" id="not">
+      <h2>What the agent does not do</h2>
+      <ul class="plain">
+        <li>It does not bulk-crawl websites, build a search index, or collect pages to assemble datasets.</li>
+        <li>It does not complete payments on a user's behalf.</li>
+        <li>It does not run on its own: no user request, no browsing.</li>
+        <li>It works through one user task at a time, and uses a small number of page loads per task.</li>
+      </ul>
+    </section>
+
+    <section class="block" id="identify">
+      <h2>How to identify the Saku agent</h2>
+      <table class="id">
+        <tr><th scope="row">Agent name</th><td>Saku Agent</td></tr>
+        <tr><th scope="row">Operator</th><td>Saku (<a href="https://saku.team/">saku.team</a>)</td></tr>
+        <tr><th scope="row">User-Agent</th><td><code>SakuAgent/1.0 (+https://saku.team/agent)</code></td></tr><!-- VERIFY: this must match the user-agent string your browser sessions actually send -->
+        <tr><th scope="row">Type of traffic</th><td>User-directed agent. Each session is triggered by a request from a Saku user.</td></tr>
+        <tr><th scope="row">Purpose</th><td>Carrying out web tasks (search, comparison, form filling, retrieving the user's own data) on behalf of the user who asked.</td></tr>
+        <!-- OPTIONAL, add once implemented and tested against Cloudflare's checker:
+        <tr><th scope="row">Cryptographic verification</th><td>Requests are signed with Web Bot Auth. Our key directory is at <code>https://saku.team/.well-known/http-message-signatures-directory</code>.</td></tr>
+        <tr><th scope="row">IP ranges</th><td>Published at https://saku.team/agent/ips.json</td></tr>
+        -->
+      </table>
+    </section>
+
+    <section class="block" id="control">
+      <h2>If you want to restrict or block Saku</h2>
+      <p>You are in control of your site. You can block or rate-limit the user-agent shown above in your server, firewall or CDN rules. If Saku is causing a problem, or you would like it to behave differently on your site, email us and we will look at it promptly.</p>
+    </section>
+
+    <section class="block" id="contact">
+      <div class="contact">
+        <h2>Contact us</h2>
+        <p>Questions, abuse reports, or requests from site owners about the Saku agent:</p>
+        <p><a href="mailto:agent@saku.team">agent@saku.team</a></p><!-- VERIFY: create this mailbox before publishing -->
+        <p style="margin:0">Please include the affected domain, approximate times (with time zone) and any request IDs or logs you have, and we will investigate.</p>
+      </div>
+      <p class="updated">Last updated: 25 November 2026</p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p style="margin:0">&copy; 2026 Saku &middot; <a href="https://saku.team/">saku.team</a></p>
+    </div>
+  </footer>
+</body>
+</html>
